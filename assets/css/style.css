@@ -581,3 +581,5 @@ p { margin: 0; }
 }
 .sns a:hover { border-color: var(--seal); color: var(--seal); }
 .sns svg { width: 18px; height: 18px; flex: none; }
+.sns small { display: block; font-family: var(--f-mono); font-size: 11px; color: var(--ink-2); line-height: 1.2; }
+.sns a span { line-height: 1.25; }
