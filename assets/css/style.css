@@ -529,3 +529,37 @@ p { margin: 0; }
 @media (max-width: 600px) {
   .job-photos img { width: 64px; height: 50px; }
 }
+
+/* Press card */
+.press {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.press-video { position: relative; display: block; background: #000; min-height: 240px; }
+.press-video img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .3s; }
+.press-video:hover img { opacity: 1; }
+.play {
+  position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; margin: -34px 0 0 -34px;
+  border-radius: 50%; background: var(--seal); box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+}
+.play::after {
+  content: ""; position: absolute; left: 27px; top: 22px;
+  border-style: solid; border-width: 12px 0 12px 19px; border-color: transparent transparent transparent #fff;
+}
+.press-video-label {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 14px 10px;
+  color: #fff; font-size: 13px; background: linear-gradient(transparent, rgba(0, 0, 0, .7));
+}
+.press-body { padding: clamp(22px, 3vw, 34px); display: grid; gap: 12px; align-content: start; }
+.press-body h4 { font-size: clamp(17px, 1.8vw, 21px); }
+.press-body blockquote { margin: 4px 0; padding-left: 16px; border-left: 3px solid var(--seal); font-family: var(--f-display); font-size: 17px; line-height: 1.7; }
+.press-translation { font-family: var(--f-body); font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+.press-note { color: var(--ink-2); font-size: 14.5px; }
+.press-body .btn { justify-self: start; }
+.ch-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.ch-links a { font-family: var(--f-mono); font-size: 12.5px; color: var(--seal); text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; }
+.ch-links a:hover { border-color: var(--seal); }
+@media (max-width: 760px) {
+  .press { grid-template-columns: minmax(0, 1fr); }
+  .press-video { aspect-ratio: 16 / 10; min-height: 0; }
+}

@@ -10,7 +10,7 @@ window.ALBUM = [
   {
     id: 'speech', kanji: '話',
     title: { ja: 'スピーチ大会', en: 'Speech Contest' },
-    when: { ja: '岡山外語学院 在学中', en: 'At Okayama Institute of Languages' },
+    when: { ja: '2023年9月', en: 'September 2023' },
     where: { ja: '岡山外語学院', en: 'Okayama Institute of Languages' },
     story: {
       ja: '22か国から約250名の学生が参加したスピーチ大会で1位となり、優勝カップと金メダルをいただきました。この結果は、日本のテレビや新聞、電子新聞でも紹介されました。',
@@ -19,7 +19,12 @@ window.ALBUM = [
     facts: [
       { ja: '1位・金メダル', en: '1st place · gold medal' },
       { ja: '22か国・約250名', en: '22 countries · ~250 students' },
-      { ja: 'テレビ・新聞で紹介', en: 'Featured on TV and in newspapers' }
+      { ja: 'スピーチ題「私の夢」', en: 'Speech title: “My Dream”' },
+      { ja: 'テレビ・新聞・webマガジンで紹介', en: 'Featured on TV, in newspapers and online' }
+    ],
+    links: [
+      { href: 'https://www.youtube.com/watch?v=laDMdR_SR9o', ja: 'スピーチ動画 ↗', en: 'Speech video ↗' },
+      { href: 'https://web-opinions.jp/posts/detail/676', ja: '掲載記事 ↗', en: 'Article ↗' }
     ],
     photos: [
       { src: 'speech/medal', w: 1600, h: 901, feature: true, ja: '金メダルをいただいた瞬間', en: 'Receiving the gold medal' },

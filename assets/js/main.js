@@ -104,6 +104,7 @@
         '<p class="meta">' + bi(ch.when) + ' ・ ' + bi(ch.where) + '</p>' +
         '<p class="ch-text">' + bi(ch.story) + '</p>' +
         (ch.facts ? '<ul class="ch-facts">' + ch.facts.map(function (f) { return '<li>' + bi(f) + '</li>'; }).join('') + '</ul>' : '') +
+        (ch.links ? '<p class="ch-links">' + ch.links.map(function (l) { return '<a href="' + esc(l.href) + '" target="_blank" rel="noopener">' + bi(l) + '</a>'; }).join('') + '</p>' : '') +
         (ch.places ? renderStamps(ch) : '') +
       '</aside>';
     var tiles = ch.photos.map(function (p, i) {
