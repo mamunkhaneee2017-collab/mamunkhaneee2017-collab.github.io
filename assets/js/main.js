@@ -56,31 +56,172 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  // Gallery scroll buttons
-  var gallery = document.getElementById('gallery');
-  document.querySelectorAll('[data-scroll]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      gallery.scrollBy({ left: Number(btn.dataset.scroll) * gallery.clientWidth * 0.8, behavior: 'smooth' });
-    });
-  });
+  // ---------- Album ----------
+  var ALBUM = window.ALBUM || [];
+  var tabsEl = document.getElementById('chapter-tabs');
+  var panelsEl = document.getElementById('chapter-panels');
 
-  // Lightbox
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function bi(o) {
+    return '<span lang="ja">' + esc(o.ja) + '</span><span lang="en">' + esc(o.en) + '</span>';
+  }
+  function photoUrl(p, thumb) {
+    return 'assets/album/' + p.src + (thumb ? '-t' : '') + '.jpg';
+  }
+  function tileShape(p) {
+    if (p.doc) return 'doc';
+    if (p.w < 400) return 'small';
+    if (p.pano) return 'pano';
+    if (p.feature) return 'feature';
+    if (p.w / p.h > 2) return 'wide';
+    if (p.h / p.w > 1.15) return 'tall';
+    return 'std';
+  }
+
+  function renderChapter(ch) {
+    var aside =
+      '<aside class="ch-story">' +
+        '<span class="kakuin" aria-hidden="true">' + ch.kanji + '</span>' +
+        '<h3>' + bi(ch.title) + '</h3>' +
+        '<p class="meta">' + bi(ch.when) + ' ・ ' + bi(ch.where) + '</p>' +
+        '<p class="ch-text">' + bi(ch.story) + '</p>' +
+        (ch.facts ? '<ul class="ch-facts">' + ch.facts.map(function (f) { return '<li>' + bi(f) + '</li>'; }).join('') + '</ul>' : '') +
+        (ch.places ? renderStamps(ch) : '') +
+      '</aside>';
+    var tiles = ch.photos.map(function (p, i) {
+      return '<figure class="tile tile-' + tileShape(p) + '"' + (p.place ? ' data-place="' + p.place + '"' : '') + '>' +
+        '<button type="button" data-index="' + i + '" aria-label="' + esc(p.ja + ' / ' + p.en) + '">' +
+          '<img loading="lazy" src="' + photoUrl(p, true) + '" data-full="' + photoUrl(p, false) + '" width="' + p.w + '" height="' + p.h + '" alt="' + esc(p.ja + ' / ' + p.en) + '">' +
+        '</button>' +
+        '<figcaption>' + bi(p) + '</figcaption>' +
+      '</figure>';
+    }).join('');
+    return '<div class="chapter">' + aside + '<div class="mosaic">' + tiles + '</div></div>';
+  }
+
+  function renderStamps(ch) {
+    var counts = {};
+    ch.photos.forEach(function (p) { counts[p.place] = (counts[p.place] || 0) + 1; });
+    var all = '<button type="button" class="stamp-btn" data-place="" aria-pressed="true">' +
+      '<span class="maruin" aria-hidden="true"><span>全</span></span>' +
+      '<span class="stamp-label">' + bi({ ja: 'すべて', en: 'All' }) + ' <b>' + ch.photos.length + '</b></span></button>';
+    return '<div class="stamps" role="group" aria-label="Places">' + all + ch.places.map(function (pl, i) {
+      var tilt = ((i * 37) % 17) - 8;
+      return '<button type="button" class="stamp-btn" data-place="' + pl.id + '" aria-pressed="false" style="--tilt:' + tilt + 'deg">' +
+        '<span class="maruin" aria-hidden="true"><span>' + esc(pl.ja) + '</span></span>' +
+        '<span class="stamp-label">' + bi(pl.pref) + ' <b>' + (counts[pl.id] || 0) + '</b></span>' +
+        '<span class="sr-only">' + esc(pl.en) + '</span></button>';
+    }).join('') + '</div>';
+  }
+
+  function selectChapter(id, focus) {
+    tabsEl.querySelectorAll('[role="tab"]').forEach(function (t) {
+      var on = t.dataset.chapter === id;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+      if (on && tabsEl.scrollWidth > tabsEl.clientWidth) {
+        tabsEl.scrollLeft = t.offsetLeft - (tabsEl.clientWidth - t.offsetWidth) / 2;
+      }
+    });
+    panelsEl.querySelectorAll('[role="tabpanel"]').forEach(function (p) {
+      p.hidden = p.dataset.chapter !== id;
+    });
+  }
+
+  if (tabsEl && ALBUM.length) {
+    tabsEl.innerHTML = ALBUM.map(function (ch) {
+      return '<button type="button" role="tab" id="tab-' + ch.id + '" aria-controls="panel-' + ch.id + '" data-chapter="' + ch.id + '">' +
+        '<span class="tab-kanji" aria-hidden="true">' + ch.kanji + '</span>' +
+        '<span class="tab-label">' + bi(ch.tab || ch.title) + '</span>' +
+        '<span class="tab-count">' + ch.photos.length + '</span></button>';
+    }).join('');
+    panelsEl.innerHTML = ALBUM.map(function (ch) {
+      return '<div role="tabpanel" id="panel-' + ch.id + '" aria-labelledby="tab-' + ch.id + '" data-chapter="' + ch.id + '" hidden>' + renderChapter(ch) + '</div>';
+    }).join('');
+    selectChapter(ALBUM[0].id);
+
+    tabsEl.addEventListener('click', function (e) {
+      var t = e.target.closest('[role="tab"]');
+      if (t) selectChapter(t.dataset.chapter);
+    });
+    tabsEl.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var tabs = Array.prototype.slice.call(tabsEl.querySelectorAll('[role="tab"]'));
+      var i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      selectChapter(next.dataset.chapter, true);
+      e.preventDefault();
+    });
+
+    // Links elsewhere on the page that open a chapter
+    document.querySelectorAll('[data-open-chapter]').forEach(function (a) {
+      a.addEventListener('click', function () { selectChapter(a.dataset.openChapter); });
+    });
+
+    // Travel stamps filter the photos
+    panelsEl.addEventListener('click', function (e) {
+      var s = e.target.closest('.stamp-btn');
+      if (!s) return;
+      var panel = s.closest('[role="tabpanel"]');
+      var place = s.dataset.place;
+      panel.querySelectorAll('.stamp-btn').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === s));
+      });
+      panel.querySelectorAll('.tile').forEach(function (t) {
+        t.hidden = !!place && t.dataset.place !== place;
+      });
+    });
+  }
+
+  // ---------- Lightbox ----------
   var box = document.getElementById('lightbox');
-  if (box && typeof box.showModal === 'function') {
+  if (box && typeof box.showModal === 'function' && panelsEl) {
     var boxImg = box.querySelector('img');
     var boxCap = box.querySelector('.lb-cap');
-    gallery.addEventListener('click', function (e) {
-      var btn = e.target.closest('button');
-      if (!btn) return;
-      var img = btn.querySelector('img');
-      var cap = btn.parentNode.querySelector('.cap [lang="' + root.dataset.lang + '"]');
-      boxImg.src = img.src;
+    var boxCount = box.querySelector('.lb-count');
+    var list = [], pos = 0;
+
+    function show(i) {
+      pos = (i + list.length) % list.length;
+      var tile = list[pos];
+      var img = tile.querySelector('img');
+      var cap = tile.querySelector('figcaption [lang="' + root.dataset.lang + '"]');
+      boxImg.src = img.dataset.full;
       boxImg.alt = img.alt;
       boxCap.textContent = cap ? cap.textContent : '';
+      boxCount.textContent = (pos + 1) + ' / ' + list.length;
+    }
+
+    panelsEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('.tile button');
+      if (!btn) return;
+      var panel = btn.closest('[role="tabpanel"]');
+      list = Array.prototype.slice.call(panel.querySelectorAll('.tile:not([hidden])'));
+      show(list.indexOf(btn.parentNode));
       box.showModal();
+    });
+    box.querySelector('.lb-prev').addEventListener('click', function () { show(pos - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { show(pos + 1); });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(pos - 1);
+      if (e.key === 'ArrowRight') show(pos + 1);
     });
     box.addEventListener('click', function (e) {
       if (e.target === box) box.close();
+    });
+    var touchX = null;
+    box.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) show(pos + (dx < 0 ? 1 : -1));
+      touchX = null;
     });
   }
 
