@@ -224,6 +224,14 @@
     });
   }
 
+  // Browsers without <dialog> (very old Safari): open the full photo in a new tab instead
+  if (panelsEl && !(typeof HTMLDialogElement === 'function' && 'showModal' in HTMLDialogElement.prototype)) {
+    panelsEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('.tile button');
+      if (btn) window.open(btn.querySelector('img').dataset.full, '_blank', 'noopener');
+    });
+  }
+
   // ---------- Lightbox ----------
   var box = document.getElementById('lightbox');
   if (box && typeof box.showModal === 'function' && panelsEl) {
