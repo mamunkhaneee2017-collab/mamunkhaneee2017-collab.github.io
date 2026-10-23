@@ -56,6 +56,20 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // History view: 履歴書形式 (default) or 年表形式
+  document.querySelectorAll('[data-view]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('[data-view]').forEach(function (b) {
+        var on = b === btn;
+        b.setAttribute('aria-pressed', String(on));
+        document.getElementById('view-' + b.dataset.view).hidden = !on;
+      });
+      document.querySelectorAll('#view-' + btn.dataset.view + ' .reveal').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+    });
+  });
+
   // ---------- Album ----------
   var ALBUM = window.ALBUM || [];
   var tabsEl = document.getElementById('chapter-tabs');
@@ -159,9 +173,14 @@
       e.preventDefault();
     });
 
-    // Links elsewhere on the page that open a chapter
+    // Links elsewhere on the page that open a chapter (and optionally press one of its stamps)
     document.querySelectorAll('[data-open-chapter]').forEach(function (a) {
-      a.addEventListener('click', function () { selectChapter(a.dataset.openChapter); });
+      a.addEventListener('click', function () {
+        selectChapter(a.dataset.openChapter);
+        var stamp = document.querySelector('#panel-' + a.dataset.openChapter +
+          ' .stamp-btn[data-place="' + (a.dataset.openPlace || '') + '"]');
+        if (stamp) stamp.click();
+      });
     });
 
     // Travel stamps filter the photos

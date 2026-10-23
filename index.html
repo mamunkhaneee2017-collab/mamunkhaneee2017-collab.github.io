@@ -135,7 +135,7 @@
             <h3><span lang="ja">続ける力</span><span lang="en">Showing up</span></h3>
             <p>
               <span lang="ja">来日してから、一日も学校を休んでいません。岡山外語学院では皆勤賞（無遅刻・無欠席）をいただき、出席率と成績が評価されてナカシマプロペラ株式会社から奨学金をいただきました。</span>
-              <span lang="en">I haven't missed a single day of school since arriving in Japan. At Okayama Gaigo Gakuin I received a perfect-attendance award, and my attendance and grades earned me a scholarship from Nakashima Propeller Co., Ltd.</span>
+              <span lang="en">I haven't missed a single day of school since arriving in Japan. At Okayama Institute of Languages I received a perfect-attendance award, and my attendance and grades earned me a scholarship from Nakashima Propeller Co., Ltd.</span>
             </p>
             <a class="more-link" href="#album" data-open-chapter="awards"><span lang="ja">賞状を見る →</span><span lang="en">See the awards →</span></a>
           </article>
@@ -171,18 +171,144 @@
     <section class="section section-tint" id="journey">
       <div class="wrap">
         <header class="section-head">
-          <h2><span lang="ja">学歴・職歴・資格</span><span lang="en">Journey</span></h2>
+          <h2><span lang="ja">経歴</span><span lang="en">Background</span></h2>
           <p class="section-sub">
-            <span lang="ja">履歴書と同じ順番で、これまでの歩みをまとめました。</span>
-            <span lang="en">Education, work and qualifications, in the order of a Japanese résumé.</span>
+            <span lang="ja">履歴書と同じ形式で、学歴・職歴・資格をまとめました。ボタンで年表形式に切り替えられます。</span>
+            <span lang="en">Laid out like a Japanese résumé (rirekisho): education, work, then qualifications. Switch to a single timeline with the button.</span>
           </p>
-          <ul class="legend" aria-label="Legend">
-            <li><i class="tag tag-edu">学</i><span lang="ja">学歴</span><span lang="en">Education</span></li>
-            <li><i class="tag tag-job">職</i><span lang="ja">職歴</span><span lang="en">Work</span></li>
-            <li><i class="tag tag-cert">資</i><span lang="ja">資格・研修</span><span lang="en">Qualification</span></li>
-          </ul>
+          <div class="view-switch" role="group" aria-label="表示形式 / View">
+            <button type="button" data-view="rirekisho" aria-pressed="true"><span lang="ja">履歴書形式</span><span lang="en">Résumé view</span></button>
+            <button type="button" data-view="timeline" aria-pressed="false"><span lang="ja">年表形式</span><span lang="en">Timeline view</span></button>
+          </div>
         </header>
 
+        <!-- View 1: 履歴書形式 (default) -->
+        <div class="view" id="view-rirekisho">
+          <div class="rireki rireki-doc" role="table" aria-label="学歴・職歴 / Education and work">
+            <div class="r-head" role="row">
+              <span role="columnheader"><span lang="ja">年</span><span lang="en">Year</span></span>
+              <span role="columnheader"><span lang="ja">月</span><span lang="en">Mo.</span></span>
+              <span role="columnheader"><span lang="ja">学歴・職歴</span><span lang="en">Education &amp; work</span></span>
+            </div>
+
+            <p class="r-title"><i class="tag tag-edu" aria-hidden="true">学</i><span lang="ja">学　歴</span><span lang="en">Education</span></p>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2008</span><span class="r-m" role="cell">1</span>
+              <div class="r-body" role="cell"><p>Ratangonj Multilateral High School, Pabna <span lang="ja">入学</span><span lang="en">— entered</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2013</span><span class="r-m" role="cell">5</span>
+              <div class="r-body" role="cell"><p>Ratangonj Multilateral High School, Pabna <span lang="ja">卒業</span><span lang="en">— graduated</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2013</span><span class="r-m" role="cell">7</span>
+              <div class="r-body" role="cell"><p>Pabna Textile Engineering Institute <span lang="ja">電気科 入学</span><span lang="en">— entered the Electrical department</span></p><small><span lang="ja">4年制の電気専門課程</span><span lang="en">A four-year electrical diploma</span></small></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2018</span><span class="r-m" role="cell">3</span>
+              <div class="r-body" role="cell"><p>Pabna Textile Engineering Institute <span lang="ja">電気科 卒業</span><span lang="en">— graduated, Electrical department</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2022</span><span class="r-m" role="cell">10</span>
+              <div class="r-body" role="cell"><p><span lang="ja">岡山外語学院 入学</span><span lang="en">Entered Okayama Institute of Languages (Japanese language school)</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">3</span>
+              <div class="r-body" role="cell"><p><span lang="ja">岡山外語学院 卒業</span><span lang="en">Graduated from Okayama Institute of Languages</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">4</span>
+              <div class="r-body" role="cell"><p><span lang="ja">専門学校ニホン国際ITカレッジ 国際IT科 入学</span><span lang="en">Entered the International IT Dept., Nihon International IT College</span></p></div>
+            </div>
+            <div class="r-row r-future" role="row">
+              <span class="r-y" role="cell">2027</span><span class="r-m" role="cell">3</span>
+              <div class="r-body" role="cell"><p><span lang="ja">専門学校ニホン国際ITカレッジ 国際IT科 卒業見込み</span><span lang="en">Expected graduation, Nihon International IT College</span></p></div>
+            </div>
+
+            <p class="r-title"><i class="tag tag-job" aria-hidden="true">職</i><span lang="ja">職　歴</span><span lang="en">Work experience</span></p>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2018</span><span class="r-m" role="cell">4</span>
+              <div class="r-body" role="cell">
+                <p>G-11 Engineering Ltd. <span lang="ja">入社</span><span lang="en">— joined</span></p>
+                <small><span lang="ja">電機メーカー。変圧器の製造・組み立てに従事。</span><span lang="en">Electrical manufacturer. Built and assembled transformers.</span></small>
+                <div class="job-photos">
+                  <a href="#album" data-open-chapter="bd" data-open-place="g11"><img src="assets/album/bd/factory-t.jpg" width="720" height="540" loading="lazy" alt="変圧器の組み立て現場 / Transformer assembly"></a>
+                  <a href="#album" data-open-chapter="bd" data-open-place="g11"><img src="assets/album/bd/transformer-t.jpg" width="612" height="816" loading="lazy" alt="製造した変圧器と / With a transformer we built"></a>
+                  <a href="#album" data-open-chapter="bd" data-open-place="g11"><img src="assets/album/bd/pole-transformer-t.jpg" width="540" height="720" loading="lazy" alt="柱上変圧器 / Pole-mounted transformer"></a>
+                  <a class="job-more" href="#album" data-open-chapter="bd" data-open-place="g11"><span lang="ja">写真 4枚 →</span><span lang="en">4 photos →</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2020</span><span class="r-m" role="cell">3</span>
+              <div class="r-body" role="cell"><p>G-11 Engineering Ltd. <span lang="ja">退職</span><span lang="en">— left</span></p><small><span lang="ja">新型コロナウイルスの影響による</span><span lang="en">Due to the COVID-19 pandemic</span></small></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2021</span><span class="r-m" role="cell">3</span>
+              <div class="r-body" role="cell">
+                <p>Alliance Computers Ltd. <span lang="ja">入社</span><span lang="en">— joined</span></p>
+                <small><span lang="ja">ネットワーク関連企業。通信設備の電源・配線、分電盤、接地工事などの現場作業に従事。</span><span lang="en">Network company. On-site work on telecom power and cabling, distribution panels and grounding.</span></small>
+                <div class="job-photos">
+                  <a href="#album" data-open-chapter="bd" data-open-place="alliance"><img src="assets/album/bd/equipment-room-t.jpg" width="540" height="720" loading="lazy" alt="通信機器室での作業 / In a telecom equipment room"></a>
+                  <a href="#album" data-open-chapter="bd" data-open-place="alliance"><img src="assets/album/bd/rack-power-t.jpg" width="540" height="720" loading="lazy" alt="通信ラックと電源装置 / Telecom rack and power system"></a>
+                  <a href="#album" data-open-chapter="bd" data-open-place="alliance"><img src="assets/album/bd/grounding-t.jpg" width="720" height="540" loading="lazy" alt="接地工事 / Grounding work"></a>
+                  <a class="job-more" href="#album" data-open-chapter="bd" data-open-place="alliance"><span lang="ja">写真 9枚 →</span><span lang="en">9 photos →</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2021</span><span class="r-m" role="cell">12</span>
+              <div class="r-body" role="cell"><p>Alliance Computers Ltd. <span lang="ja">退職</span><span lang="en">— left</span></p></div>
+            </div>
+            <p class="r-end"><span lang="ja">以上</span><span lang="en">End</span></p>
+          </div>
+
+          <div class="rireki rireki-doc" role="table" aria-label="資格・免許 / Licenses and certifications">
+            <div class="r-head" role="row">
+              <span role="columnheader"><span lang="ja">年</span><span lang="en">Year</span></span>
+              <span role="columnheader"><span lang="ja">月</span><span lang="en">Mo.</span></span>
+              <span role="columnheader"><span lang="ja">資格・免許</span><span lang="en">Licenses &amp; certifications</span></span>
+            </div>
+            <p class="r-title"><i class="tag tag-cert" aria-hidden="true">資</i><span lang="ja">資格・免許</span><span lang="en">Licenses &amp; certifications</span></p>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2016</span><span class="r-m" role="cell">6</span>
+              <div class="r-body" role="cell"><p><span lang="ja">コンピューターアプリケーション（インターネット）研修（6か月コース）修了</span><span lang="en">Completed computer applications (internet) training, 6-month course</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2016</span><span class="r-m" role="cell">6</span>
+              <div class="r-body" role="cell"><p><span lang="ja">一般電子工学研修（6か月コース）修了</span><span lang="en">Completed general electronics training, 6-month course</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2017</span><span class="r-m" role="cell">12</span>
+              <div class="r-body" role="cell"><p><span lang="ja">電気工事基礎研修（6か月コース）修了</span><span lang="en">Completed basic electrical installation training, 6-month course</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">9</span>
+              <div class="r-body" role="cell"><p><span lang="ja">日本語能力試験 N2 合格</span><span lang="en">Passed the Japanese-Language Proficiency Test (JLPT) N2</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">12</span>
+              <div class="r-body" role="cell"><p><span lang="ja">日本情報処理検定協会 文章入力スピード認定試験 日本語 4級 取得</span><span lang="en">Typing speed certification (Japanese), Grade 4 — Japan Information Processing Certification Association</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">12</span>
+              <div class="r-body" role="cell"><p><span lang="ja">日本情報処理検定協会 文章入力スピード認定試験 英語 準2級 取得</span><span lang="en">Typing speed certification (English), Pre-2nd Grade — Japan Information Processing Certification Association</span></p></div>
+            </div>
+            <div class="r-row" role="row">
+              <span class="r-y" role="cell">2025</span><span class="r-m" role="cell">12</span>
+              <div class="r-body" role="cell"><p><span lang="ja">普通自動車第一種運転免許 取得</span><span lang="en">Japanese driver's license (standard car, class 1)</span></p></div>
+            </div>
+            <p class="r-end"><span lang="ja">以上</span><span lang="en">End</span></p>
+          </div>
+        </div>
+
+        <!-- View 2: 年表形式 -->
+        <div class="view" id="view-timeline" hidden>
+        <ul class="legend" aria-label="Legend">
+          <li><i class="tag tag-edu">学</i><span lang="ja">学歴</span><span lang="en">Education</span></li>
+          <li><i class="tag tag-job">職</i><span lang="ja">職歴</span><span lang="en">Work</span></li>
+          <li><i class="tag tag-cert">資</i><span lang="ja">資格・研修</span><span lang="en">Qualification</span></li>
+        </ul>
         <div class="rireki" role="table" aria-label="Timeline">
           <div class="r-head" role="row">
             <span role="columnheader"><span lang="ja">年</span><span lang="en">Year</span></span>
@@ -262,14 +388,14 @@
           <div class="r-row reveal" role="row">
             <span class="r-y" role="cell">2022</span><span class="r-m" role="cell">10</span>
             <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
-              <p><span lang="ja">岡山外語学院 入学</span><span lang="en">Entered Okayama Gaigo Gakuin (Japanese language school)</span></p>
+              <p><span lang="ja">岡山外語学院 入学</span><span lang="en">Entered Okayama Institute of Languages (Japanese language school)</span></p>
               <small><span lang="ja">皆勤賞・ナカシマプロペラ奨学金・スピーチ大会 優勝・川掃除ボランティア</span><span lang="en">Perfect attendance, Nakashima Propeller scholarship, speech contest winner, river clean-up volunteer</span></small>
             </div>
           </div>
           <div class="r-row reveal" role="row">
             <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">3</span>
             <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
-              <p><span lang="ja">岡山外語学院 卒業</span><span lang="en">Graduated from Okayama Gaigo Gakuin</span></p>
+              <p><span lang="ja">岡山外語学院 卒業</span><span lang="en">Graduated from Okayama Institute of Languages</span></p>
             </div>
           </div>
           <div class="r-row reveal" role="row">
@@ -303,6 +429,8 @@
               <p><span lang="ja">専門学校ニホン国際ITカレッジ 卒業見込み</span><span lang="en">Expected graduation, Nihon International IT College</span></p>
             </div>
           </div>
+        </div>
+
         </div>
 
         <h3 class="sub-head"><span lang="ja">教室の外で</span><span lang="en">Outside the classroom</span></h3>

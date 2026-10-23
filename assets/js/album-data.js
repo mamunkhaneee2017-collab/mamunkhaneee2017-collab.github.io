@@ -9,8 +9,8 @@
 window.ALBUM = [
   {
     id: 'speech', kanji: '話',
-    title: { ja: 'スピーチ大会', en: 'Speech contest' },
-    when: { ja: '岡山外語学院 在学中', en: 'At Okayama Gaigo Gakuin' },
+    title: { ja: 'スピーチ大会', en: 'Speech Contest' },
+    when: { ja: '岡山外語学院 在学中', en: 'At Okayama Institute of Languages' },
     where: { ja: '岡山外語学院', en: 'Okayama Institute of Languages' },
     story: {
       ja: '22か国から約250名の学生が参加したスピーチ大会で1位となり、優勝カップと金メダルをいただきました。この結果は、日本のテレビや新聞、電子新聞でも紹介されました。',
@@ -129,6 +129,7 @@ window.ALBUM = [
       { src: 'travel/nantai', w: 1600, h: 900, place: 'nikko', ja: '男体山', en: 'Mt. Nantai' },
       { src: 'travel/odaiba', w: 1200, h: 1600, place: 'tokyo', ja: 'お台場の自由の女神', en: 'Statue of Liberty, Odaiba' },
       { src: 'travel/oshino', w: 1600, h: 1200, place: 'fuji', ja: '忍野八海と富士山', en: 'Oshino Hakkai and Mt. Fuji' },
+      { src: 'travel/fujiq', w: 1200, h: 1600, place: 'fuji', ja: '富士急ハイランド', en: 'Fuji-Q Highland' },
       { src: 'travel/disneysea', w: 960, h: 720, place: 'disney', ja: '東京ディズニーシー', en: 'Tokyo DisneySea' },
       { src: 'travel/hakone-view', w: 1200, h: 1600, place: 'hakone', ja: '箱根の展望台', en: 'Lookout in Hakone' },
       { src: 'travel/skytree', w: 1200, h: 1600, place: 'tokyo', ja: '東京スカイツリー', en: 'Tokyo Skytree' },
@@ -142,22 +143,36 @@ window.ALBUM = [
   },
   {
     id: 'bd', kanji: '原',
-    title: { ja: 'バングラデシュ時代', en: 'Bangladesh years' },
-    tab: { ja: 'バングラデシュ時代', en: 'Bangladesh' },
+    title: { ja: 'バングラデシュでの仕事', en: 'Work in Bangladesh' },
+    tab: { ja: 'バングラデシュ', en: 'Bangladesh' },
     when: { ja: '2018年〜2022年', en: '2018–2022' },
     where: { ja: 'バングラデシュ', en: 'Bangladesh' },
     story: {
-      ja: '電機メーカーでは、変圧器などの電気機器の製造に携わりました。現場で身につけたハードウェアの知識が、いまの私の原点です。日本へ来る前には、現地の日本語学校で日本語の勉強を始めました。',
-      en: 'At an electrical manufacturer, I worked on building equipment like transformers. That shop-floor hardware experience is where I started. Before moving to Japan, I began learning Japanese at a language school back home.'
+      ja: 'G-11 Engineering Ltd.（電機メーカー）では変圧器の製造に、Alliance Computers Ltd.（ネットワーク関連企業）では通信設備の電源・配線や分電盤、接地などの現場作業に携わりました。現場で身につけたハードウェアの知識が、いまの私の原点です。',
+      en: 'At G-11 Engineering Ltd., an electrical manufacturer, I worked on building transformers. At Alliance Computers Ltd., a network company, I did on-site work on telecom power and cabling, distribution panels and grounding. That hands-on hardware experience is where I started.'
     },
-    facts: [
-      { ja: '電機メーカーでの実務', en: 'Electrical manufacturing work' },
-      { ja: '来日前から日本語を学習', en: 'Studied Japanese before coming' }
+    places: [
+      { id: 'g11', ja: '電機', en: 'G-11 Engineering', pref: { ja: 'G-11', en: 'G-11' } },
+      { id: 'alliance', ja: '通信', en: 'Alliance Computers', pref: { ja: 'Alliance', en: 'Alliance' } },
+      { id: 'jpschool', ja: '日本語', en: 'Japanese school', pref: { ja: '日本語学校', en: 'Language' } },
+      { id: 'home', ja: '故郷', en: 'Pabna', pref: { ja: 'パブナ', en: 'Pabna' } }
     ],
     photos: [
-      { src: 'bd/factory', w: 1440, h: 1080, feature: true, ja: '変圧器の組み立て現場', en: 'Transformer assembly on the shop floor' },
-      { src: 'bd/transformer', w: 612, h: 816, ja: '製造した変圧器と', en: 'With a transformer we built' },
-      { src: 'bd/jp-school', w: 1600, h: 1200, ja: 'バングラデシュの日本語学校', en: 'Japanese language school in Bangladesh' }
+      { src: 'bd/factory', w: 1440, h: 1080, place: 'g11', feature: true, ja: '変圧器の組み立て現場', en: 'Transformer assembly on the shop floor' },
+      { src: 'bd/transformer', w: 612, h: 816, place: 'g11', ja: '製造した変圧器と', en: 'With a transformer we built' },
+      { src: 'bd/pole-transformer', w: 1200, h: 1600, place: 'g11', ja: '柱上変圧器', en: 'Pole-mounted transformer' },
+      { src: 'bd/transformers', w: 1200, h: 1600, place: 'g11', ja: '出荷前の変圧器', en: 'Transformers before shipping' },
+      { src: 'bd/equipment-room', w: 1200, h: 1600, place: 'alliance', ja: '通信機器室での作業', en: 'In a telecom equipment room' },
+      { src: 'bd/rack-power', w: 1200, h: 1600, place: 'alliance', ja: '通信ラックと電源装置', en: 'Telecom rack and power system' },
+      { src: 'bd/rectifier', w: 1600, h: 1200, place: 'alliance', ja: '整流器ユニット', en: 'Rectifier units' },
+      { src: 'bd/telecom-rack', w: 1200, h: 1600, place: 'alliance', ja: '通信装置の配線', en: 'Cabling telecom equipment' },
+      { src: 'bd/breaker', w: 1600, h: 1200, place: 'alliance', ja: 'ブレーカーの配線', en: 'Circuit breaker wiring' },
+      { src: 'bd/rack-rectifier', w: 1200, h: 1600, place: 'alliance', ja: 'バッテリー・整流器ラック', en: 'Battery and rectifier rack' },
+      { src: 'bd/panel', w: 1200, h: 1600, place: 'alliance', ja: '分電盤', en: 'Distribution panel' },
+      { src: 'bd/rack-cabling', w: 1200, h: 1600, place: 'alliance', ja: 'ラック内の配線', en: 'Rack cabling' },
+      { src: 'bd/grounding', w: 1600, h: 1200, place: 'alliance', ja: '基地局の接地（アース）工事', en: 'Grounding work at a site' },
+      { src: 'bd/jp-school', w: 1600, h: 1200, place: 'jpschool', ja: 'バングラデシュの日本語学校', en: 'Japanese language school in Bangladesh' },
+      { src: 'bd/site-2021', w: 1600, h: 738, place: 'home', ja: 'パブナの文化財・タラシュ・ボボン', en: 'Tarash Bhaban, a heritage site in Pabna' }
     ]
   }
 ];
