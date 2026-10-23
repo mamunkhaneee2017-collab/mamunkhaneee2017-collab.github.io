@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>カーン エムディ マムン | Khan MD Mamun — Portfolio</title>
+  <meta name="description" content="専門学校ニホン国際ITカレッジ 国際IT科。バングラデシュで電気を学び、日本でITを学ぶシステムエンジニア志望のポートフォリオ。 / Portfolio of Khan MD Mamun, an IT student in Japan with an electrical engineering background.">
+  <meta property="og:title" content="Khan MD Mamun — Portfolio">
+  <meta property="og:description" content="電気の現場から、システムの設計へ。From wiring panels to designing systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/portrait.jpg">
+  <meta name="theme-color" content="#1B2440">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;600&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Set language and theme before first paint to avoid a flash
+    (function () {
+      var d = document.documentElement, lang, theme;
+      var q = new URLSearchParams(location.search);
+      try { lang = localStorage.getItem('lang'); theme = localStorage.getItem('theme'); } catch (e) {}
+      if (/^(ja|en)$/.test(q.get('lang'))) lang = q.get('lang');
+      if (/^(light|dark)$/.test(q.get('theme'))) theme = q.get('theme');
+      if (!lang) lang = /^ja/i.test(navigator.language || '') ? 'ja' : 'en';
+      d.dataset.lang = lang; d.lang = lang;
+      if (theme) d.dataset.theme = theme;
+    })();
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+      </filter>
+      <symbol id="hanko" viewBox="0 0 100 100">
+        <g filter="url(#ink)" fill="currentColor" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke-width="6" style="fill: var(--seal-bg, none)"/>
+          <g stroke="none" font-size="29" font-weight="800" text-anchor="middle" font-family="'Shippori Mincho B1', serif">
+            <text x="50" y="37">マ</text>
+            <text x="50" y="63">ム</text>
+            <text x="50" y="88">ン</text>
+          </g>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main"><span lang="ja">本文へ移動</span><span lang="en">Skip to content</span></a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Khan MD Mamun">
+        <svg class="brand-seal" aria-hidden="true"><use href="#hanko"/></svg>
+        <span class="brand-name">Khan MD Mamun</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#about"><span lang="ja">自己PR</span><span lang="en">About</span></a>
+        <a href="#journey"><span lang="ja">経歴</span><span lang="en">Journey</span></a>
+        <a href="#skills"><span lang="ja">スキル</span><span lang="en">Skills</span></a>
+        <a href="#work"><span lang="ja">制作</span><span lang="en">Work</span></a>
+        <a href="#japan"><span lang="ja">写真</span><span lang="en">Photos</span></a>
+        <a href="#contact"><span lang="ja">連絡先</span><span lang="en">Contact</span></a>
+      </nav>
+      <div class="controls">
+        <div class="lang-switch" role="group" aria-label="Language / 言語">
+          <button type="button" data-set-lang="ja" lang="ja">日本語</button>
+          <button type="button" data-set-lang="en" lang="en">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-9.54-4.9A5.38 5.38 0 0 1 12.36 3H12z"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <p class="tategaki" aria-hidden="true">カーン・エムディ・マムン</p>
+
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span lang="ja">専門学校ニホン国際ITカレッジ 国際IT科 ・ 2027年3月 卒業見込み</span>
+            <span lang="en">International IT Dept., Nihon International IT College · Graduating March 2027</span>
+          </p>
+          <h1>
+            <span lang="ja">電気の現場から、<br>システムの設計へ。</span>
+            <span lang="en">From wiring panels<br>to designing systems.</span>
+          </h1>
+          <p class="hero-name">KHAN MD MAMUN <span class="kana">カーン エムディ マムン</span></p>
+          <p class="lead">
+            <span lang="ja">バングラデシュで電気を学び、電機メーカーとコンピューター関連企業で働いてきました。いまは日本でソフトウェアを学び、ハードウェアとソフトウェアの両方がわかるシステムエンジニアを目指しています。</span>
+            <span lang="en">I trained as an electrical technician in Bangladesh and worked at an electrical manufacturer and a computer company. Now I study software in Japan, and I'm aiming to become a systems engineer who understands both the hardware and the code.</span>
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact"><span lang="ja">連絡する</span><span lang="en">Get in touch</span></a>
+            <a class="btn btn-ghost" href="#journey"><span lang="ja">経歴を見る</span><span lang="en">See my journey</span></a>
+          </div>
+          <ul class="creds">
+            <li><b>JLPT N2</b><span lang="ja">日本語能力試験</span><span lang="en">Japanese proficiency</span></li>
+            <li><b><span lang="ja">優勝</span><span lang="en">1st place</span></b><span lang="ja">スピーチ大会（22か国・約250名）</span><span lang="en">Speech contest, ~250 students from 22 countries</span></li>
+            <li><b><span lang="ja">5言語</span><span lang="en">5 languages</span></b><span lang="ja">日・英・ベンガル・ヒンディー・ウルドゥー</span><span lang="en">Japanese, English, Bengali, Hindi, Urdu</span></li>
+          </ul>
+        </div>
+
+        <figure class="portrait">
+          <img src="assets/img/portrait.jpg" width="295" height="380" alt="カーン エムディ マムンの写真 / Photo of Khan MD Mamun">
+          <svg class="seal stamp" aria-hidden="true"><use href="#hanko"/></svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="section-head">
+          <h2><span lang="ja">自己PR</span><span lang="en">About me</span></h2>
+          <p class="section-sub">
+            <span lang="ja">新しいことに挑戦し、最後まで諦めずに続けること。それが私の強みです。</span>
+            <span lang="en">I take on new things, and I keep going until they're done.</span>
+          </p>
+        </header>
+
+        <div class="strengths">
+          <article class="strength reveal">
+            <p class="kanji" aria-hidden="true">継</p>
+            <h3><span lang="ja">続ける力</span><span lang="en">Showing up</span></h3>
+            <p>
+              <span lang="ja">来日してから、一日も学校を休んでいません。岡山外語学院では出席率と成績が評価され、奨学金をいただきました。</span>
+              <span lang="en">I haven't missed a single day of school since arriving in Japan. At Okayama Gaigo Gakuin, my attendance and grades earned me a scholarship.</span>
+            </p>
+          </article>
+          <article class="strength reveal">
+            <p class="kanji" aria-hidden="true">伝</p>
+            <h3><span lang="ja">伝える力</span><span lang="en">Speaking up</span></h3>
+            <p>
+              <span lang="ja">22か国・約250名の学生が参加したスピーチ大会で1位となり、金メダルをいただきました。この結果は日本のテレビや新聞でも紹介されました。</span>
+              <span lang="en">I won first place and a gold medal at a speech contest with about 250 students from 22 countries. The result was covered by Japanese TV and newspapers.</span>
+            </p>
+          </article>
+          <article class="strength reveal">
+            <p class="kanji" aria-hidden="true">挑</p>
+            <h3><span lang="ja">挑戦する力</span><span lang="en">Starting over</span></h3>
+            <p>
+              <span lang="ja">新型コロナウイルスの影響で退職したとき、それを「新しいチャンス」と考え、ITを専門的に学ぶために日本への留学を決めました。</span>
+              <span lang="en">When COVID ended my job, I treated it as a fresh start and decided to come to Japan to study IT properly.</span>
+            </p>
+          </article>
+        </div>
+
+        <blockquote class="goal reveal">
+          <p>
+            <span lang="ja">将来は、お客様の要望や現場の課題を正しく理解し、ハードウェアとソフトウェアの両方の視点から最適なシステムを提案・開発できるエンジニアになりたいと考えています。</span>
+            <span lang="en">My goal is to understand what customers and the people on the shop floor really need, then propose and build systems that work from both the hardware side and the software side.</span>
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Journey: 学歴・職歴・資格 -->
+    <section class="section section-tint" id="journey">
+      <div class="wrap">
+        <header class="section-head">
+          <h2><span lang="ja">学歴・職歴・資格</span><span lang="en">Journey</span></h2>
+          <p class="section-sub">
+            <span lang="ja">履歴書と同じ順番で、これまでの歩みをまとめました。</span>
+            <span lang="en">Education, work and qualifications, in the order of a Japanese résumé.</span>
+          </p>
+          <ul class="legend" aria-label="Legend">
+            <li><i class="tag tag-edu">学</i><span lang="ja">学歴</span><span lang="en">Education</span></li>
+            <li><i class="tag tag-job">職</i><span lang="ja">職歴</span><span lang="en">Work</span></li>
+            <li><i class="tag tag-cert">資</i><span lang="ja">資格・研修</span><span lang="en">Qualification</span></li>
+          </ul>
+        </header>
+
+        <div class="rireki" role="table" aria-label="Timeline">
+          <div class="r-head" role="row">
+            <span role="columnheader"><span lang="ja">年</span><span lang="en">Year</span></span>
+            <span role="columnheader"><span lang="ja">月</span><span lang="en">Mo.</span></span>
+            <span role="columnheader"><span lang="ja">内容</span><span lang="en">Entry</span></span>
+          </div>
+
+          <p class="r-country"><span lang="ja">バングラデシュ</span><span lang="en">Bangladesh</span></p>
+
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2013</span><span class="r-m" role="cell">5</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p>Ratangonj Multilateral High School, Pabna <span lang="ja">卒業</span><span lang="en">— graduated</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2013</span><span class="r-m" role="cell">7</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p>Pabna Textile Engineering Institute <span lang="ja">電気科 入学</span><span lang="en">— entered the Electrical department</span></p>
+              <small><span lang="ja">4年制の電気専門課程</span><span lang="en">A four-year electrical diploma</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2016</span><span class="r-m" role="cell">6</span>
+            <div class="r-body" role="cell"><i class="tag tag-cert">資</i>
+              <p><span lang="ja">コンピューターアプリケーション（インターネット）研修・一般電子工学研修 修了</span><span lang="en">Completed courses in computer applications (internet) and general electronics</span></p>
+              <small><span lang="ja">各6か月コース</span><span lang="en">Six months each</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2017</span><span class="r-m" role="cell">12</span>
+            <div class="r-body" role="cell"><i class="tag tag-cert">資</i>
+              <p><span lang="ja">電気工事基礎研修 修了（6か月コース）</span><span lang="en">Completed a six-month course in basic electrical installation</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2018</span><span class="r-m" role="cell">3</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p>Pabna Textile Engineering Institute <span lang="ja">電気科 卒業</span><span lang="en">— graduated, Electrical department</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2018</span><span class="r-m" role="cell">4</span>
+            <div class="r-body" role="cell"><i class="tag tag-job">職</i>
+              <p>G-11 Engineering Ltd. <span lang="ja">入社</span><span lang="en">— joined</span></p>
+              <small><span lang="ja">電機メーカーでの実務</span><span lang="en">Hands-on work at an electrical manufacturer</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2020</span><span class="r-m" role="cell">3</span>
+            <div class="r-body" role="cell"><i class="tag tag-job">職</i>
+              <p>G-11 Engineering Ltd. <span lang="ja">退職</span><span lang="en">— left</span></p>
+              <small><span lang="ja">新型コロナウイルスの影響による</span><span lang="en">Due to the COVID-19 pandemic</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2021</span><span class="r-m" role="cell">3</span>
+            <div class="r-body" role="cell"><i class="tag tag-job">職</i>
+              <p>Alliance Computers Ltd. <span lang="ja">入社（同年12月 退職）</span><span lang="en">— joined (left in December)</span></p>
+              <small><span lang="ja">コンピューター・ネットワーク関連の業務</span><span lang="en">Computer and network-related work</span></small>
+            </div>
+          </div>
+
+          <div class="crossing reveal" aria-label="Bangladesh → Japan">
+            <svg viewBox="0 0 60 36" class="flag" aria-hidden="true"><rect width="60" height="36" fill="#006A4E"/><circle cx="27" cy="18" r="11" fill="#F42A41"/></svg>
+            <span class="crossing-line" aria-hidden="true"></span>
+            <p>
+              <span lang="ja">同じ赤い丸の旗から、もうひとつの赤い丸の旗へ。</span>
+              <span lang="en">From one flag with a red circle to another.</span>
+            </p>
+            <span class="crossing-line" aria-hidden="true"></span>
+            <svg viewBox="0 0 60 36" class="flag" aria-hidden="true"><rect width="60" height="36" fill="#fff" stroke="#C9D0DA"/><circle cx="30" cy="18" r="10.8" fill="#BC002D"/></svg>
+          </div>
+
+          <p class="r-country"><span lang="ja">日本</span><span lang="en">Japan</span></p>
+
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2022</span><span class="r-m" role="cell">10</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p><span lang="ja">岡山外語学院 入学</span><span lang="en">Entered Okayama Gaigo Gakuin (Japanese language school)</span></p>
+              <small><span lang="ja">奨学金受給・スピーチ大会 優勝・川掃除ボランティア</span><span lang="en">Scholarship, speech contest winner, river clean-up volunteer</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">3</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p><span lang="ja">岡山外語学院 卒業</span><span lang="en">Graduated from Okayama Gaigo Gakuin</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">4</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p><span lang="ja">専門学校ニホン国際ITカレッジ 国際IT科 入学</span><span lang="en">Entered the International IT Dept., Nihon International IT College</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">9</span>
+            <div class="r-body" role="cell"><i class="tag tag-cert">資</i>
+              <p><span lang="ja">日本語能力試験 N2 合格</span><span lang="en">Passed JLPT N2</span></p>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2024</span><span class="r-m" role="cell">12</span>
+            <div class="r-body" role="cell"><i class="tag tag-cert">資</i>
+              <p><span lang="ja">文章入力スピード認定試験 日本語4級・英語準2級</span><span lang="en">Typing speed certification: Japanese Grade 4, English Pre-2nd Grade</span></p>
+              <small><span lang="ja">日本情報処理検定協会</span><span lang="en">Japan Information Processing Certification Association</span></small>
+            </div>
+          </div>
+          <div class="r-row reveal" role="row">
+            <span class="r-y" role="cell">2025</span><span class="r-m" role="cell">12</span>
+            <div class="r-body" role="cell"><i class="tag tag-cert">資</i>
+              <p><span lang="ja">普通自動車第一種運転免許 取得</span><span lang="en">Japanese driver's license (standard car)</span></p>
+            </div>
+          </div>
+          <div class="r-row r-future reveal" role="row">
+            <span class="r-y" role="cell">2027</span><span class="r-m" role="cell">3</span>
+            <div class="r-body" role="cell"><i class="tag tag-edu">学</i>
+              <p><span lang="ja">専門学校ニホン国際ITカレッジ 卒業見込み</span><span lang="en">Expected graduation, Nihon International IT College</span></p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-head"><span lang="ja">教室の外で</span><span lang="en">Outside the classroom</span></h3>
+        <div class="outside">
+          <article class="reveal">
+            <h4><span lang="ja">コンビニでのアルバイト</span><span lang="en">Convenience store job</span></h4>
+            <p class="meta"><span lang="ja">約3年間</span><span lang="en">About 3 years</span></p>
+            <p><span lang="ja">レジを中心とした接客を通じて、丁寧な対応と、状況に合わせて柔軟に動く力を身につけました。</span><span lang="en">Working the register and serving customers taught me to be polite and precise, and to adapt fast when things get busy.</span></p>
+          </article>
+          <article class="reveal">
+            <h4><span lang="ja">インターンシップ</span><span lang="en">Internship</span></h4>
+            <p class="meta"><span lang="ja">ゲイトウェイ・コンピュータ株式会社・3日間</span><span lang="en">Gateway Computer Co., Ltd. · 3 days</span></p>
+            <p><span lang="ja">IT企業の仕事の流れを実際に見て、業界への理解を深めました。</span><span lang="en">I saw how work actually flows inside a Japanese IT company.</span></p>
+          </article>
+          <article class="reveal">
+            <h4><span lang="ja">ボランティア・イベント</span><span lang="en">Volunteering &amp; events</span></h4>
+            <p class="meta"><span lang="ja">岡山外語学院</span><span lang="en">Okayama Gaigo Gakuin</span></p>
+            <p><span lang="ja">川掃除のボランティアや学校行事で、さまざまな国の学生と協力し、チームワークの大切さを学びました。</span><span lang="en">Cleaning rivers and running school events with students from many countries taught me how to work as a team.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <header class="section-head">
+          <h2><span lang="ja">スキル</span><span lang="en">Skills</span></h2>
+          <p class="section-sub">
+            <span lang="ja">ソフトウェア、ハードウェア、そして言葉。三つの道具を持っています。</span>
+            <span lang="en">Three toolkits: software, hardware, and languages.</span>
+          </p>
+        </header>
+        <div class="skills">
+          <article class="skill-col reveal">
+            <h3><span lang="ja">ソフトウェア</span><span lang="en">Software</span></h3>
+            <p class="meta"><span lang="ja">専門学校で学習中・制作で使用</span><span lang="en">Studying at college and using in projects</span></p>
+            <ul class="chips">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Java</li><li>Python</li>
+              <li><span lang="ja">システム開発</span><span lang="en">System development</span></li>
+              <li><span lang="ja">AI活用</span><span lang="en">Applied AI</span></li>
+            </ul>
+          </article>
+          <article class="skill-col reveal">
+            <h3><span lang="ja">ハードウェア</span><span lang="en">Hardware</span></h3>
+            <p class="meta"><span lang="ja">バングラデシュでの学習と実務</span><span lang="en">Training and work in Bangladesh</span></p>
+            <ul class="chips">
+              <li><span lang="ja">電気工事</span><span lang="en">Electrical installation</span></li>
+              <li><span lang="ja">電子工学</span><span lang="en">Electronics</span></li>
+              <li><span lang="ja">電機メーカーでの実務</span><span lang="en">Electrical manufacturing</span></li>
+              <li><span lang="ja">ネットワーク関連業務</span><span lang="en">Networking work</span></li>
+            </ul>
+          </article>
+          <article class="skill-col reveal">
+            <h3><span lang="ja">言語</span><span lang="en">Languages</span></h3>
+            <p class="meta"><span lang="ja">5言語で会話可能</span><span lang="en">Conversational in five</span></p>
+            <dl class="langs">
+              <div><dt><span lang="ja">ベンガル語</span><span lang="en">Bengali</span></dt><dd><span lang="ja">母語</span><span lang="en">Native</span></dd></div>
+              <div><dt><span lang="ja">日本語</span><span lang="en">Japanese</span></dt><dd>JLPT N2</dd></div>
+              <div><dt><span lang="ja">英語</span><span lang="en">English</span></dt><dd><span lang="ja">会話</span><span lang="en">Conversational</span></dd></div>
+              <div><dt><span lang="ja">ヒンディー語</span><span lang="en">Hindi</span></dt><dd><span lang="ja">会話</span><span lang="en">Conversational</span></dd></div>
+              <div><dt><span lang="ja">ウルドゥー語</span><span lang="en">Urdu</span></dt><dd><span lang="ja">会話</span><span lang="en">Conversational</span></dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section section-tint" id="work">
+      <div class="wrap">
+        <header class="section-head">
+          <h2><span lang="ja">制作物</span><span lang="en">Work</span></h2>
+          <p class="section-sub">
+            <span lang="ja">学んだことを、実際に動くものにしています。</span>
+            <span lang="en">Turning what I learn into things that run.</span>
+          </p>
+        </header>
+
+        <article class="project project-feature reveal">
+          <div class="project-art" aria-hidden="true">
+            <span class="kana-big">あ</span>
+            <span class="kana-row">い う え お</span>
+            <span class="ai-dot">AI</span>
+          </div>
+          <div class="project-body">
+            <p class="eyebrow"><span lang="ja">卒業制作 ・ 開発中</span><span lang="en">Graduation project · In progress</span></p>
+            <h3><span lang="ja">AIを活用した日本語学習支援ウェブサイト</span><span lang="en">AI-assisted Japanese learning website</span></h3>
+            <p>
+              <span lang="ja">日本語学校で日本語を学んだ自分の経験をもとに、学習者が一人でも練習を続けられるよう、AIでサポートするウェブサイトを開発しています。</span>
+              <span lang="en">Built from my own experience learning Japanese at a language school: a website that uses AI to help learners keep practicing on their own.</span>
+            </p>
+            <ul class="chips small"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>AI</li></ul>
+          </div>
+        </article>
+
+        <div class="projects">
+          <article class="project reveal">
+            <p class="eyebrow"><span lang="ja">個人制作</span><span lang="en">Personal</span></p>
+            <h3><span lang="ja">このポートフォリオサイト</span><span lang="en">This portfolio</span></h3>
+            <p>
+              <span lang="ja">日本語・英語の切り替え、ダークモード、スマートフォン対応。フレームワークを使わず、HTML・CSS・JavaScriptだけで作っています。</span>
+              <span lang="en">Bilingual, dark-mode ready and mobile-friendly, written in plain HTML, CSS and JavaScript with no framework.</span>
+            </p>
+            <ul class="chips small"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </article>
+          <article class="project reveal">
+            <p class="eyebrow"><span lang="ja">授業課題</span><span lang="en">Coursework</span></p>
+            <h3><span lang="ja">ウェブサイト制作</span><span lang="en">Website builds</span></h3>
+            <p>
+              <span lang="ja">専門学校の授業で、複数のウェブサイトを制作しました。デザインからコーディングまで、自分の手で形にしています。</span>
+              <span lang="en">Several websites built for college courses, each taken from layout to working code.</span>
+            </p>
+            <ul class="chips small"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </article>
+          <!-- Add more projects here: copy an <article class="project"> block above. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos -->
+    <section class="section" id="japan">
+      <div class="wrap">
+        <header class="section-head">
+          <h2><span lang="ja">日本で見た景色</span><span lang="en">Japan, through my camera</span></h2>
+          <p class="section-sub">
+            <span lang="ja">学校の外でも、日本のことをもっと知りたいと思っています。</span>
+            <span lang="en">Outside school, I keep exploring the country I now call home.</span>
+          </p>
+        </header>
+      </div>
+      <div class="gallery-wrap">
+        <ul class="gallery" id="gallery">
+          <li><button type="button"><img loading="lazy" src="assets/img/fuji.jpg" width="1100" height="825" alt="富士山 / Mt. Fuji"></button><span class="cap"><span lang="ja">富士山</span><span lang="en">Mt. Fuji</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/temple-autumn.jpg" width="1100" height="619" alt="紅葉の参道 / Temple path in autumn"></button><span class="cap"><span lang="ja">紅葉の参道</span><span lang="en">Autumn temple path</span></span></li>
+          <li class="tall"><button type="button"><img loading="lazy" src="assets/img/hakone.jpg" width="825" height="1100" alt="箱根の展望台にて / At a lookout in Hakone"></button><span class="cap"><span lang="ja">箱根</span><span lang="en">Hakone</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/asakusa.jpg" width="1100" height="825" alt="浅草寺 宝蔵門 / Hozomon gate, Senso-ji"></button><span class="cap"><span lang="ja">浅草寺</span><span lang="en">Senso-ji, Asakusa</span></span></li>
+          <li class="tall"><button type="button"><img loading="lazy" src="assets/img/skytree.jpg" width="825" height="1100" alt="夜の東京スカイツリー / Tokyo Skytree at night"></button><span class="cap"><span lang="ja">東京スカイツリー</span><span lang="en">Tokyo Skytree</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/oshino.jpg" width="1100" height="825" alt="忍野八海と富士山 / Oshino Hakkai with Mt. Fuji"></button><span class="cap"><span lang="ja">忍野八海</span><span lang="en">Oshino Hakkai</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/yukata.jpg" width="1100" height="825" alt="友人と浴衣で / With friends in yukata"></button><span class="cap"><span lang="ja">友人と旅館で</span><span lang="en">Ryokan trip with friends</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/sakura.jpg" width="1100" height="825" alt="川沿いの桜並木 / Cherry blossoms along a river"></button><span class="cap"><span lang="ja">桜並木</span><span lang="en">Cherry blossoms</span></span></li>
+          <li class="tall"><button type="button"><img loading="lazy" src="assets/img/gundam.jpg" width="825" height="1100" alt="お台場のユニコーンガンダム / Unicorn Gundam in Odaiba"></button><span class="cap"><span lang="ja">お台場</span><span lang="en">Odaiba</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/plate.jpg" width="1100" height="825" alt="絵付け体験で描いた富士山のお皿 / A Mt. Fuji plate I painted"></button><span class="cap"><span lang="ja">絵付け体験</span><span lang="en">Plate I painted</span></span></li>
+          <li class="tall"><button type="button"><img loading="lazy" src="assets/img/roppongi.jpg" width="619" height="1100" alt="六本木のイルミネーションと東京タワー / Roppongi lights and Tokyo Tower"></button><span class="cap"><span lang="ja">六本木</span><span lang="en">Roppongi</span></span></li>
+          <li><button type="button"><img loading="lazy" src="assets/img/momiji.jpg" width="1100" height="619" alt="紅葉 / Autumn maple leaves"></button><span class="cap"><span lang="ja">紅葉</span><span lang="en">Maple leaves</span></span></li>
+        </ul>
+        <div class="gallery-nav wrap">
+          <button type="button" class="icon-btn" data-scroll="-1" aria-label="Previous photos">←</button>
+          <button type="button" class="icon-btn" data-scroll="1" aria-label="Next photos">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2><span lang="ja">お気軽にご連絡ください。</span><span lang="en">Let's talk.</span></h2>
+          <p class="lead">
+            <span lang="ja">2027年4月からの新卒採用について、お話しできるとうれしいです。</span>
+            <span lang="en">I'm looking for a new-graduate role starting April 2027.</span>
+          </p>
+          <div class="email-row">
+            <a class="btn btn-primary" href="mailto:mamunkhaneee2017@gmail.com">mamunkhaneee2017@gmail.com</a>
+            <button type="button" class="btn btn-ghost" id="copy-email" data-email="mamunkhaneee2017@gmail.com">
+              <span lang="ja">コピー</span><span lang="en">Copy</span>
+            </button>
+          </div>
+          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="wish">
+          <h3><span lang="ja">希望職種</span><span lang="en">Roles I'm applying for</span></h3>
+          <ol>
+            <li><span lang="ja">システムエンジニア（SE）</span><span lang="en">Systems engineer (SE)</span></li>
+            <li><span lang="ja">フィールドエンジニア</span><span lang="en">Field engineer</span></li>
+            <li><span lang="ja">電気技術者</span><span lang="en">Electrical engineer</span></li>
+          </ol>
+          <dl class="facts">
+            <div><dt><span lang="ja">所在地</span><span lang="en">Based in</span></dt><dd><span lang="ja">千葉県松戸市</span><span lang="en">Matsudo, Chiba</span></dd></div>
+            <div><dt><span lang="ja">入社可能</span><span lang="en">Available</span></dt><dd><span lang="ja">2027年4月〜</span><span lang="en">From April 2027</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <svg class="brand-seal" aria-hidden="true"><use href="#hanko"/></svg>
+      <p>© <span id="year">2026</span> Khan MD Mamun</p>
+      <a href="#top"><span lang="ja">ページの先頭へ ↑</span><span lang="en">Back to top ↑</span></a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <form method="dialog"><button class="icon-btn lb-close" aria-label="Close">✕</button></form>
+    <img alt="">
+    <p class="lb-cap"></p>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
