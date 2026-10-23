@@ -114,6 +114,7 @@
     if (p.doc) return 'doc';
     if (p.w < 400) return 'small';
     if (p.pano) return 'pano';
+    if (p.big) return 'feature';
     if (p.feature) return 'feature';
     if (p.w / p.h > 2) return 'wide';
     if (p.h / p.w > 1.15) return 'tall';
@@ -132,7 +133,7 @@
         (ch.places ? renderStamps(ch) : '') +
       '</aside>';
     var tiles = ch.photos.map(function (p, i) {
-      return '<figure class="tile tile-' + tileShape(p) + '"' + (p.place ? ' data-place="' + p.place + '"' : '') + '>' +
+      return '<figure class="tile tile-' + tileShape(p) + (p.news ? ' tile-news' : '') + '"' + (p.place ? ' data-place="' + p.place + '"' : '') + '>' +
         '<button type="button" data-index="' + i + '" aria-label="' + esc(p.ja + ' / ' + p.en) + '">' +
           '<img loading="lazy" src="' + photoUrl(p, true) + '" data-full="' + photoUrl(p, false) + '" width="' + p.w + '" height="' + p.h + '" alt="' + esc(p.ja + ' / ' + p.en) + '">' +
         '</button>' +

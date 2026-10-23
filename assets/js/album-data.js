@@ -31,7 +31,11 @@ window.ALBUM = [
       { src: 'speech/stage', w: 865, h: 1536, ja: 'スピーチ本番', en: 'On stage' },
       { src: 'speech/tv', w: 1080, h: 608, ja: 'テレビ局のインタビュー', en: 'Interviewed by a TV crew' },
       { src: 'speech/group', w: 1600, h: 901, ja: '大会後、皆さんと一緒に', en: 'With everyone after the contest' },
-      { src: 'speech/cup', w: 206, h: 206, ja: '優勝カップの授与', en: 'Receiving the winner\'s cup' }
+      { src: 'speech/cup', w: 206, h: 206, ja: '優勝カップの授与', en: 'Receiving the winner\'s cup' },
+      { src: 'speech/news-interview', w: 800, h: 450, news: true, big: true, ja: 'テレビニュースで紹介されました', en: 'Featured on local TV news' },
+      { src: 'speech/news-title', w: 800, h: 450, news: true, ja: 'ニュース「留学生の日本での夢は？」', en: 'News: students\' dreams in Japan' },
+      { src: 'speech/news-award', w: 800, h: 450, news: true, ja: 'ニュース：表彰', en: 'News: the award' },
+      { src: 'speech/news-chair', w: 800, h: 450, news: true, ja: 'ニュース：理事長のコメント', en: 'News: the chairperson' }
     ]
   },
   {
