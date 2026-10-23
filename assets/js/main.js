@@ -56,6 +56,13 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // Phone number
+  document.querySelectorAll('.phone').forEach(function (a) {
+    var parts = a.dataset.parts.split(',');
+    a.textContent = parts.join('-');
+    a.href = 'tel:+81' + parts.join('').slice(1);
+  });
+
   // Speech video: play in place instead of leaving the page (the link still works without JS)
   var video = document.querySelector('.press-video');
   if (video) {
