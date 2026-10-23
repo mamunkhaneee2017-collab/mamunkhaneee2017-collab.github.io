@@ -586,3 +586,6 @@ p { margin: 0; }
 /* TV news stills carry their own subtitles at the bottom, so our caption goes on top */
 .tile-news figcaption { top: 0; bottom: auto; padding: 9px 12px 26px; background: linear-gradient(rgba(10, 14, 24, .75), transparent); }
 .tile-news figcaption::before { content: "TV"; font: 600 10px/1 var(--f-mono); background: var(--seal); color: #fff; padding: 3px 5px; border-radius: 2px; margin-right: 6px; vertical-align: 1px; }
+.langs dd { text-align: right; }
+.langs dt { white-space: nowrap; }
+.langs dd small { display: block; font-size: 11px; opacity: .8; }
