@@ -601,3 +601,32 @@ p { margin: 0; }
 .reach a { display: inline-flex; align-items: center; min-height: 36px; }
 .brand { min-height: 40px; min-width: 40px; }
 .hero-name .kana { display: inline-block; white-space: nowrap; }
+
+/* Real project card: screenshots */
+.project-real { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 18px; background: var(--paper-2); align-content: start; }
+.shot { display: block; border-radius: 4px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .4s; }
+.shot:hover img { transform: scale(1.03); }
+.shot-main { grid-column: 1 / -1; }
+.h3-sub { display: block; font-size: .7em; font-weight: 500; color: var(--ink-2); margin-top: 4px; }
+.feature-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14.5px; }
+.feature-list li { display: flex; gap: 10px; align-items: baseline; color: var(--ink-2); }
+.feature-list li::before { content: ""; width: 7px; height: 7px; background: var(--seal); flex: none; transform: translateY(-2px); }
+.project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+
+/* Now learning & certification goals */
+.growth { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.growth-col { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; display: grid; gap: 12px; align-content: start; }
+.growth-col h4 { font-size: 18px; }
+.growth-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.growth-list li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+.growth-list li:last-child { border-bottom: 0; }
+.growth-list small { display: block; font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
+.status { flex: none; font: 500 11px/1 var(--f-mono); padding: 4px 7px; border-radius: 3px; border: 1px solid currentColor; min-width: 3.6em; text-align: center; }
+.status-now { color: var(--ink); }
+.status-build { color: var(--moss); }
+.status-goal { color: var(--seal); }
+@media (max-width: 960px) {
+  .project-real, .growth { grid-template-columns: minmax(0, 1fr); }
+}
