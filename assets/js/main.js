@@ -56,6 +56,23 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // Speech video: play in place instead of leaving the page (the link still works without JS)
+  var video = document.querySelector('.press-video');
+  if (video) {
+    video.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = new URL(video.href).searchParams.get('v');
+      var frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      frame.title = video.querySelector('img').alt;
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin'; // YouTube refuses embeds that send no referrer
+      frame.className = 'press-frame';
+      video.replaceWith(frame);
+    });
+  }
+
   // History view: 履歴書形式 (default) or 年表形式
   document.querySelectorAll('[data-view]').forEach(function (btn) {
     btn.addEventListener('click', function () {
