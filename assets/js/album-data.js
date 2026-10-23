@@ -157,8 +157,8 @@ window.ALBUM = [
     when: { ja: '2018年〜2022年', en: '2018–2022' },
     where: { ja: 'バングラデシュ', en: 'Bangladesh' },
     story: {
-      ja: 'G-11 Engineering Ltd.（電機メーカー）では変圧器の製造に、Alliance Computers Ltd.（ネットワーク関連企業）では通信設備の電源・配線や分電盤、接地などの現場作業に携わりました。現場で身につけたハードウェアの知識が、いまの私の原点です。',
-      en: 'At G-11 Engineering Ltd., an electrical manufacturer, I worked on building transformers. At Alliance Computers Ltd., a network company, I did on-site work on telecom power and cabling, distribution panels and grounding. That hands-on hardware experience is where I started.'
+      ja: 'G-11 Engineering Ltd.（電機メーカー）では変圧器の製造に、Alliance Computers Ltd.（ネットワーク会社）では電気部門を担当し、通信設備の電源・配線や分電盤、接地などの電気工事に携わりました。現場で身につけたハードウェアの知識が、いまの私の原点です。',
+      en: 'At G-11 Engineering Ltd., an electrical manufacturer, I worked on building transformers. At Alliance Computers Ltd., a networking company, I worked on the electrical side: power and cabling for telecom equipment, distribution panels and grounding. That hands-on hardware experience is where I started.'
     },
     places: [
       { id: 'g11', ja: '電機', en: 'G-11 Engineering', pref: { ja: 'G-11', en: 'G-11' } },
