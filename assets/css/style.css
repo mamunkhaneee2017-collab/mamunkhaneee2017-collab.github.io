@@ -112,7 +112,7 @@ p { margin: 0; }
 .hero { padding: clamp(40px, 8vw, 96px) 0 clamp(32px, 4vw, 56px); position: relative; }
 .hero-grid {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) minmax(220px, 300px);
+  grid-template-columns: auto minmax(0, 1fr) minmax(200px, 260px);
   gap: clamp(20px, 4vw, 56px);
   align-items: start;
 }
@@ -149,11 +149,11 @@ p { margin: 0; }
 .portrait img {
   width: 100%; aspect-ratio: 295 / 380; object-fit: cover;
   border-radius: var(--radius);
-  box-shadow: 0 0 0 1px var(--line), 14px 14px 0 -1px var(--paper-2), 14px 14px 0 0 var(--line);
+  box-shadow: 0 0 0 1px var(--line);
 }
 .seal {
-  position: absolute; width: 104px; height: 104px; color: var(--seal);
-  left: -40px; bottom: -34px; transform: rotate(-12deg);
+  position: absolute; width: 80px; height: 110px; color: var(--seal);
+  left: -34px; bottom: -36px; transform: rotate(-12deg);
   --seal-bg: color-mix(in srgb, var(--paper) 92%, transparent);
 }
 
@@ -345,7 +345,7 @@ p { margin: 0; }
   .portrait { grid-column: 2; grid-row: 1; width: 180px; justify-self: start; }
   .hero-copy { grid-column: 2; grid-row: 2; }
   .tategaki { grid-row: 1 / span 2; }
-  .seal { width: 64px; height: 64px; left: auto; right: -34px; bottom: -14px; }
+  .seal { width: 52px; height: 72px; left: auto; right: -30px; bottom: -18px; }
   .strengths, .skills, .outside { grid-template-columns: minmax(0, 1fr); }
   .project-feature { grid-template-columns: minmax(0, 1fr); }
   .project-art { min-height: 200px; }
