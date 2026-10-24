@@ -65,12 +65,16 @@
 
   // Speech video: play in place instead of leaving the page (the link still works without JS)
   var video = document.querySelector('.press-video');
-  if (video) {
+  // YouTube refuses embeds it can't identify (Error 153): on a page opened as a local file there is
+  // no web origin to report, so there the link simply opens YouTube in a new tab.
+  if (video && /^https?:$/.test(location.protocol)) {
     video.addEventListener('click', function (e) {
       e.preventDefault();
       var id = new URL(video.href).searchParams.get('v');
       var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      frame.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1' +
+        '&origin=' + encodeURIComponent(location.origin) +
+        '&widget_referrer=' + encodeURIComponent(location.href);
       frame.title = video.querySelector('img').alt;
       frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       frame.allowFullscreen = true;
