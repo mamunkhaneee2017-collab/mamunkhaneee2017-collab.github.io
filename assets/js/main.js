@@ -63,26 +63,49 @@
     a.href = 'tel:+81' + parts.join('').slice(1);
   });
 
-  // Speech video: play in place instead of leaving the page (the link still works without JS)
-  var video = document.querySelector('.press-video');
+  // Media videos: play in place instead of leaving the page (the links still work without JS).
+  // A card either names its player in data-embed (the TV station's own embed) or links to YouTube.
   // YouTube refuses embeds it can't identify (Error 153): on a page opened as a local file there is
-  // no web origin to report, so there the link simply opens YouTube in a new tab.
-  if (video && /^https?:$/.test(location.protocol)) {
+  // no web origin to report, so there the links simply open in a new tab.
+  document.querySelectorAll('.press-video').forEach(function (video) {
+    if (!/^https?:$/.test(location.protocol)) return;
     video.addEventListener('click', function (e) {
       e.preventDefault();
-      var id = new URL(video.href).searchParams.get('v');
       var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1' +
-        '&origin=' + encodeURIComponent(location.origin) +
-        '&widget_referrer=' + encodeURIComponent(location.href);
+      if (video.dataset.embed) {
+        frame.src = video.dataset.embed;
+      } else {
+        var id = new URL(video.href).searchParams.get('v');
+        frame.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1' +
+          '&origin=' + encodeURIComponent(location.origin) +
+          '&widget_referrer=' + encodeURIComponent(location.href);
+      }
       frame.title = video.querySelector('img').alt;
       frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       frame.allowFullscreen = true;
       frame.referrerPolicy = 'strict-origin-when-cross-origin'; // YouTube refuses embeds that send no referrer
       frame.className = 'press-frame';
-      video.replaceWith(frame);
+      if (!video.dataset.embed) {
+        video.replaceWith(frame);
+        return;
+      }
+      // The TV station's embed is a fixed 1240px-wide page with the player at one spot
+      // (data-crop = "x,y,width,height"). Load it at that size, then scale and crop to the player.
+      var crop = video.dataset.crop.split(',').map(Number);
+      var box = document.createElement('div');
+      box.className = 'press-crop';
+      box.style.aspectRatio = crop[2] + ' / ' + crop[3];
+      frame.className = 'press-crop-frame';
+      box.appendChild(frame);
+      video.replaceWith(box);
+      function fit() {
+        var s = box.clientWidth / crop[2];
+        frame.style.transform = 'scale(' + s + ') translate(' + -crop[0] + 'px,' + -crop[1] + 'px)';
+      }
+      fit();
+      window.addEventListener('resize', fit);
     });
-  }
+  });
 
   // History view: 履歴書形式 (default) or 年表形式
   document.querySelectorAll('[data-view]').forEach(function (btn) {

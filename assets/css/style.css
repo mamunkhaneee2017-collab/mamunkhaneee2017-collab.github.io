@@ -630,3 +630,6 @@ p { margin: 0; }
 @media (max-width: 960px) {
   .project-real, .growth { grid-template-columns: minmax(0, 1fr); }
 }
+/* TV station embed: cropped and scaled to just its player (see main.js) */
+.press-crop { position: relative; width: 100%; overflow: hidden; background: #000; align-self: center; }
+.press-crop-frame { position: absolute; left: 0; top: 0; width: 1240px; height: 700px; border: 0; transform-origin: 0 0; }
