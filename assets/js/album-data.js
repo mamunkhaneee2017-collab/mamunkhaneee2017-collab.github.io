@@ -13,14 +13,14 @@ window.ALBUM = [
     when: { ja: '2023年9月', en: 'September 2023' },
     where: { ja: '岡山外語学院', en: 'Okayama Institute of Languages' },
     story: {
-      ja: '22か国から約250名の学生が参加したスピーチ大会で1位となり、優勝カップと金メダルをいただきました。この結果は、日本のテレビや新聞、電子新聞でも紹介されました。',
-      en: 'I took first place out of about 250 students from 22 countries and received the winner\'s cup and a gold medal. The result was covered by Japanese TV, newspapers and online news.'
+      ja: '21か国・約240名が学ぶ岡山外語学院の日本語スピーチ大会で、7か国・代表11名の中から優勝し、優勝カップと金メダルをいただきました。この結果は、テレビ（RSK山陽放送）やwebマガジンなどで紹介されました。',
+      en: 'At Okayama Institute of Languages, where about 240 students from 21 countries study, I finished first among 11 finalists from 7 countries and received the winner\'s cup and a gold medal. It was covered on TV (RSK Sanyo Broadcasting) and in an online magazine.'
     },
     facts: [
       { ja: '1位・金メダル', en: '1st place · gold medal' },
-      { ja: '22か国・約250名', en: '22 countries · ~250 students' },
+      { ja: '代表11名（7か国）の中から優勝', en: 'Top of 11 finalists from 7 countries' },
       { ja: 'スピーチ題「私の夢」', en: 'Speech title: “My Dream”' },
-      { ja: 'テレビ・新聞・webマガジンで紹介', en: 'Featured on TV, in newspapers and online' }
+      { ja: 'RSK山陽放送のニュース・webマガジンで紹介', en: 'Featured on RSK TV news and in an online magazine' }
     ],
     links: [
       { href: 'https://www.youtube.com/watch?v=laDMdR_SR9o', ja: 'スピーチ動画 ↗', en: 'Speech video ↗' },
