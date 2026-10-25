@@ -27,7 +27,8 @@
       try { lang = localStorage.getItem('lang'); theme = localStorage.getItem('theme'); } catch (e) {}
       if (/^(ja|en)$/.test(q.get('lang'))) lang = q.get('lang');
       if (/^(light|dark)$/.test(q.get('theme'))) theme = q.get('theme');
-      if (!lang) lang = /^ja/i.test(navigator.language || '') ? 'ja' : 'en';
+      // Japanese first for every visitor; English only if they switched (remembered) or the link says ?lang=en
+      if (!lang) lang = 'ja';
       d.dataset.lang = lang; d.lang = lang;
       if (theme) d.dataset.theme = theme;
     })();
