@@ -40,6 +40,38 @@
     }
   });
 
+  // Highlight the menu item for the section currently on screen
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          if (a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navLinks.forEach(function (a) {
+      var section = document.querySelector(a.getAttribute('href'));
+      if (section) spy.observe(section);
+    });
+    // The contact section is short and never reaches mid-screen, so mark it at the bottom of the page
+    window.addEventListener('scroll', function () {
+      if (window.innerHeight + window.scrollY < document.documentElement.scrollHeight - 4) return;
+      navLinks.forEach(function (a) {
+        if (a.getAttribute('href') === '#contact') a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    }, { passive: true });
+    var hero = document.getElementById('top');
+    if (hero) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) navLinks.forEach(function (a) { a.removeAttribute('aria-current'); });
+      }, { rootMargin: '-45% 0px -50% 0px' }).observe(hero);
+    }
+  }
+
   // Reveal on scroll
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
